@@ -86,6 +86,10 @@ export default function IndexScreen({ navigation, route }) {
     
   }
 
+
+
+  
+
   // The function to render each row in our FlatList
   function renderItem({ item }) {
     return (
@@ -100,14 +104,24 @@ export default function IndexScreen({ navigation, route }) {
             flexDirection: "row",
             justifyContent: "space-between",
           }}>
-          <Text style={styles.text}>{item.title}</Text>
+
+
+          <Text style={styles.text}>{item.title} (by {item.dateTask})</Text>
+          
+         
           <TouchableOpacity onPress={() => deletePost(item.id)}>
-            <FontAwesome name="trash" size={20} color="#a80000" />
+          <Text style={styles.text}>{item.content}</Text>
+            <FontAwesome name="check" size={20} color="#a80000" />
           </TouchableOpacity>
         </View>
       </TouchableOpacity>
     );
   }
+
+  
+    
+    posts.sort((a, b) => a.content - b.content)
+  
 
   return (
     <View style={styles.container}>
@@ -117,7 +131,7 @@ export default function IndexScreen({ navigation, route }) {
         style={{ width: "100%" }}
         keyExtractor={(item) => item.id.toString()}
         refreshControl={<RefreshControl
-          colors={["#9Bd35A", "#689F38"]}
+          colors={["#9Bd38A", "#689F38"]}
           refreshing={refreshing}
           onRefresh={onRefresh}/>}
       />

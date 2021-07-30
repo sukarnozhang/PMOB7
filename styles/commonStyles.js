@@ -25,13 +25,13 @@ export const commonStyles = {
 export const lightStyles = {
   container: {
     flex: 1,
-    backgroundColor: "#ffc",
+    backgroundColor: "cyan",
   },
   text: {
     color: "black",
   },
   header: {
-    backgroundColor: "yellow",
+    backgroundColor: "blue",
     height: 100,
     shadowColor: "black",
     shadowOpacity: 0.2,

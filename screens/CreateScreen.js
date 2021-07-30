@@ -17,12 +17,14 @@ export default function CreateScreen({ navigation }) {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [dateTask, setDateTask] = useState("");
 
 
     async function savePost() {
       const post = {
         "title": title,
         "content": content, 
+        "dateTask": dateTask,
       }
       //const token = await AsyncStorage.getItem("token");
       try {
@@ -43,21 +45,25 @@ export default function CreateScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>
-        Create Post Screen
-      </Text>
+      
       <View style={{ margin: 20 }}>
-        <Text style={[additionalStyles.label, styles.text]}>Enter Title:</Text>
+        <Text style={[additionalStyles.label, styles.text]}>Enter Task:</Text>
         <TextInput
           style={additionalStyles.input}
           value={title}
           onChangeText={text => setTitle(text)}
         />
-        <Text style={[additionalStyles.label, styles.text]}>Enter Content:</Text>
+        <Text style={[additionalStyles.label, styles.text]}>Priority:</Text>
         <TextInput
           style={additionalStyles.input}
           value={content}
           onChangeText={text => setContent(text)}
+        />
+           <Text style={[additionalStyles.label, styles.text]}>Due By:</Text>
+        <TextInput
+          style={additionalStyles.input}
+          value={dateTask}
+          onChangeText={text => setDateTask(text)}
         />
       <TouchableOpacity style={[styles.button, {marginTop: 20}]} onPress={savePost}>
         <Text style={styles.buttonText}>

@@ -134,7 +134,7 @@ export default function AccountScreen({ navigation }) {
 
     <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
         <Text style={{ marginTop: 10, fontSize: 20, color: "#0000EE" }}> No profile picture. Click to take one. </Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", margin: 20}}>
       <Text style={[styles.content, styles.text]}> Dark Mode? </Text>
       <Switch
